@@ -1,0 +1,22 @@
+.logo
+{
+	height: 50px;
+}
+
+header
+{
+	border-bottom: 3px red solid;
+	display: flex;
+	justify-content: flex-start;
+}
+
+footer 
+{
+	text-align: center;
+	border-top: 3px red solid;
+}
+
+body
+{
+	text-align: center;
+}
