@@ -11,8 +11,17 @@ catch(Exception $e)
 
 // Insertion des données
 $req = $bdd->prepare('INSERT INTO account (nom, prenom, pseudo, motdepasse, questionsecrete, reponsesecrete) VALUES(?, ?, ?, ?, ?, ?)');
+
 //hachage mdp
-$req->execute(array($_POST['nom'], $_POST['prenom'], $_POST['pseudo'], $_POST['motdepasse'], $_POST['questionsecrete'], $_POST['reponsesecrete']));
+
+$nom= htmlspecialchars($_POST["nom"]);
+$prenom= htmlspecialchars($_POST["prenom"]);
+$pseudo= htmlspecialchars($_POST["pseudo"]);
+$motdepasse= htmlspecialchars($_POST["motdepasse"]);
+$questionsecrete= htmlspecialchars($_POST["questionsecrete"]);
+$reponsesecrete= htmlspecialchars($_POST["reponsesecrete"]);
+
+$req->execute(array($nom, $prenom, $pseudo, $motdepasse, $questionsecrete, $reponsesecrete));
 
 
 // Redirection du visiteur vers la page d'accueil

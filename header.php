@@ -8,10 +8,19 @@
 		
 	</head>
 
+	<body>
+
 	<header>
 		
 		<p> <img class="logo" src="images/logo_gbaf.png" alt="Logo GBAF" /> </p>
 
+
+		<!--afficher seulement si connecté : -->
+		<nav>
+			<p>Bonjour, $nom $prenom</p>
+			<p><a href="parametresprofil.php">Paramètres</a> / <a href="deconnexion.php">Déconnexion</a></p>
+
+		</nav>
+
 	</header>
 
-	<body>
