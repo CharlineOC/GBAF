@@ -17,7 +17,7 @@
 
 		<!--afficher seulement si connecté : -->
 		<nav>
-			<p>Bonjour, $nom $prenom</p>
+			<p>Bonjour, $nom $prenom !</p>  <!-- ???   <?php echo $_POST['nom'], $_POST['prenom']; ?>  ??? -->
 			<p><a href="parametresprofil.php">Paramètres</a> / <a href="deconnexion.php">Déconnexion</a></p>
 
 		</nav>

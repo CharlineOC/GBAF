@@ -5,9 +5,12 @@
 
 header
 {
+	background-color: maroon;
+	max-height: 60px;
 	border-bottom: 3px red solid;
 	display: flex;
 	justify-content: space-between;
+	align-items: center;
 }
 
 footer 
@@ -16,11 +19,36 @@ footer
 	border-top: 3px red solid;
 }
 
-body
+h1
+{
+	text-align: center;
+	color: red;
+	font-weight: bold;
+	background-color: silver;
+	margin-top: 40px;
+	margin-bottom: 60px;
+}
+
+.sectionprésentation
+{
+	border: 4px black double;
+	margin: 20px 10px 20px 10px;
+}
+
+.présentation
+{
+	margin: 10px 5px 10px 5px;
+}
+
+a
+{
+	color: grey;
+}
+
+.pageindex , .pageinscription
 {
 	text-align: center;
 }
-
 
 
 /* 

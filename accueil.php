@@ -4,9 +4,11 @@
  ?>
 
 
-<section class="présentation">
+<section class="sectionprésentation">
 
 	<h1>GBAF: Le Groupement Banque-Assurance Français</h1>
+
+	<div class="présentation">
 
 	<p>
 		Le Groupement Banque Assurance Français (GBAF) est une fédération représentant les 6 grands groupes français : <br/>
@@ -29,13 +31,16 @@
 
 	</p>
 
+	</div>
+
+
 </section>
 
 <section class="acteurs">
 
 	<h2>Nos acteurs et partenaires :</h2>
 
-	
+
 	
 
 </section>
