@@ -5,7 +5,7 @@
 
 header
 {
-	background-color: maroon;
+	background-color: rgba(88, 41, 0, 0.5);
 	max-height: 60px;
 	border-bottom: 3px red solid;
 	display: flex;

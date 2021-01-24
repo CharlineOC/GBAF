@@ -15,12 +15,25 @@
 		<p> <img class="logo" src="images/logo_gbaf.png" alt="Logo GBAF" /> </p>
 
 
-		<!--afficher seulement si connecté : -->
-		<nav>
-			<p>Bonjour, $nom $prenom !</p>  <!-- ???   <?php echo $_POST['nom'], $_POST['prenom']; ?>  ??? -->
+		<!--afficher seulement si session existe : -->
+
+
+	<?php 
+		session_start();
+	?>
+
+	<nav>
+		<?php    
+			if (isset($_SESSION['id_user']) AND isset($_SESSION['nom']) AND isset($_SESSION['prenom']))       
+			{     
+				echo 'Bonjour ' . $_SESSION['nom'] . ' ' . $_SESSION['prenom'];    
+			}   
+		?>
+			<!-- ???   <?php echo $_POST['nom'], $_POST['prenom']; ?>  ??? -->
 			<p><a href="parametresprofil.php">Paramètres</a> / <a href="deconnexion.php">Déconnexion</a></p>
 
-		</nav>
+	</nav>
+
 
 	</header>
 
