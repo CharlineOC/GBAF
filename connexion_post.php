@@ -10,6 +10,10 @@ catch(Exception $e)
 }
 
 /* 
+
+!!! verifier que l'utilisateur existe !!!
+
+
 si POST n'est pas vide, 
 	-> htmlspecialchars de mes donnees
 faire requete select pour chercher utilisateur
@@ -29,6 +33,7 @@ if (isset($_POST['pseudo']) AND isset($_POST['motdepasse']))
 	//  Récupération de l'utilisateur et de son pass hashé
 	$req = $bdd->prepare('SELECT id_user, motdepasse, nom, prenom, pseudo FROM account WHERE pseudo = :pseudo');
 	$req->execute(array('pseudo' => $pseudo));
+	print_r($pseudo);
 	$resultat = $req->fetch();
 
 
