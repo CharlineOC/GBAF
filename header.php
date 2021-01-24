@@ -12,7 +12,7 @@
 
 	<header>
 		
-		<p> <img class="logo" src="images/logo_gbaf.png" alt="Logo GBAF" /> </p>
+		<p> <a href="accueil.php"><img class="logo" src="images/logo_gbaf.png" alt="Logo GBAF" /></a> </p>
 
 
 		<!--afficher seulement si session existe : -->
