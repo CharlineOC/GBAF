@@ -30,7 +30,7 @@
 			}   
 		?>
 			<!-- ???   <?php echo $_POST['nom'], $_POST['prenom']; ?>  ??? -->
-			<p><a href="parametresprofil.php">Paramètres</a> / <a href="deconnexion.php">Déconnexion</a></p>
+			<p><a href="profil.php">Paramètres</a> / <a href="deconnexion.php">Déconnexion</a></p>
 
 	</nav>
 
