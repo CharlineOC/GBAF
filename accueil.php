@@ -1,7 +1,7 @@
 <!-- session start ? + include header ici -->
 
 <?php 
-	include "header.php";
+include "header.php";
  ?>
 
 
@@ -37,11 +37,44 @@
 
 </section>
 
-<section class="acteurs">
+<section class="sectionacteurs">
 
 	<h2>Nos acteurs et partenaires :</h2>
 
+	<?php	
 
+		try
+			{
+				$bdd = new PDO('mysql:host=localhost;dbname=gbaf;charset=utf8', 'root', '');
+			}
+		catch(Exception $e)
+			{
+			        die('Erreur : '.$e->getMessage());
+			}
+
+		$getActeur = $bdd->prepare('SELECT * FROM acteurs');
+		$getActeur->execute();
+		while ($donnees = $getActeur->fetch())
+		{
+		?>
+		
+
+	<div class="acteur">
+
+			<img class="logo_acteur" src="<?php echo $donnees['logo']; ?>">
+			<h3> <?php echo  $donnees['acteur']; ?> </h3>
+			<p> <?php echo $donnees['description']; ?> </p>
+			<a class="bouton" href="acteurs.php?acteur=<?php echo $donnees['id_acteur']; ?>">Lire la suite</a>
+
+	</div>
+
+		<?php
+
+		}
+		
+		$getActeur->closeCursor();
+
+		?>
 	
 
 </section>
