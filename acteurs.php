@@ -32,7 +32,7 @@ include "header.php";
 
 		<img class="logo_acteur" src="<?php echo $donnees['logo']; ?>"/>
 		<h2><?php echo $donnees['acteur']; ?></h2>
-		<p><?php echo $donnees['description']; ?></p>
+		<p><?php echo nl2br($donnees['description']); ?></p>
 
 	</div>
 	
@@ -60,10 +60,31 @@ include "header.php";
 					$nb_comm->execute(array('id_acteur'=>$id_acteur));
 					$nb_commentaire = $nb_comm->fetch();
 
-					echo '<p>' . $nb_commentaire['nb_comm'] .  ' commentaires.</p>'
-
+					echo '<p>' . $nb_commentaire['nb_comm'] .  ' commentaires</p>'
 
 				?>
+
+				<?php
+
+
+               
+
+                $likes = $bdd->prepare('SELECT COUNT(*) AS nb_likes FROM vote WHERE id_acteur = :id_acteur AND vote = 1');
+                $likes->execute(array('id_acteur'=>$id_acteur));
+                $nb_likes = $likes->fetch();
+
+
+                $dislikes = $bdd->prepare('SELECT COUNT(*) AS nb_dislikes FROM vote WHERE id_acteur = :id_acteur AND vote = 0');
+                $dislikes->execute(array('id_acteur'=>$id_acteur));
+                $nb_dislikes = $dislikes->fetch();
+
+            
+                ?>
+
+
+				<a href="vote.php?acteur=<?php echo $id_acteur; ?>&amp;vote=1"><?php echo $nb_likes['nb_likes']; ?> Like</a>
+                <a href="vote.php?acteur=<?php echo $id_acteur; ?>&amp;vote=0"><?php echo $nb_dislikes['nb_dislikes']; ?> Dislike</a>
+
 
                 <p> les 5 derniers commentaires : </p>
 
@@ -87,6 +108,16 @@ include "header.php";
         				}
 
 				?>
+
+				<p>Laisser un commentaire : <br/>
+
+		            <form action="commentaire_post.php" method="POST">
+		                <input type="hidden" name="id_acteur" value="<?php echo $id_acteur; ?>" />
+		                <textarea rows="5" name="commentaire"></textarea>
+		                <input type="submit" value="Envoyer">
+		            </form>
+
+	            </p>
 
 		
 	</div>
