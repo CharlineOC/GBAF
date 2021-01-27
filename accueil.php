@@ -61,10 +61,10 @@ include "header.php";
 
 	<div class="acteur">
 
-			<img class="logo_acteur" src="<?php echo $donnees['logo']; ?>">
+			<img class="logo_acteur_mini" src="<?php echo $donnees['logo']; ?>">
 			<h3> <?php echo  $donnees['acteur']; ?> </h3>
-			<p> <?php echo $donnees['description']; ?> </p>
-			<a class="bouton" href="acteurs.php?acteur=<?php echo $donnees['id_acteur']; ?>">Lire la suite</a>
+			<p class="description"> <?php echo $donnees['description']; ?> </p>
+			<a class="boutonsuite" href="acteurs.php?acteur=<?php echo $donnees['id_acteur']; ?>">Lire la suite</a>
 
 	</div>
 

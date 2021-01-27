@@ -19,7 +19,7 @@ footer
 	border-top: 3px red solid;
 }
 
-h1
+h1 , h2
 {
 	text-align: center;
 	color: red;
@@ -29,7 +29,7 @@ h1
 	margin-bottom: 60px;
 }
 
-.sectionprésentation
+.sectionprésentation , .sectionacteurs
 {
 	border: 4px black double;
 	margin: 20px 10px 20px 10px;
@@ -49,6 +49,7 @@ a
 {
 	text-align: center;
 }
+
 
 
 /* 
