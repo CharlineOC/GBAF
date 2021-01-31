@@ -14,17 +14,25 @@ session_start();
 
 <?php
 
-/*enregistrer vote (insert into vote ) */
+$id_user=$_SESSION['id_user'];
 $id_acteur=$_GET['acteur'];
 $vote=$_GET['vote'];
-$id_user=$_SESSION['id_user'];
+
+
+$req_vote_user = $bdd->prepare('SELECT COUNT(*) AS nb_vote FROM vote WHERE id_acteur = :id_acteur AND id_user= :id_user');
+$req_vote_user->execute(array('id_acteur'=>$id_acteur, 'id_user'=>$id_user));
+$nb_vote_user = $req_vote_user->fetch();
+
+$vote_existe = $nb_vote_user['nb_vote'];
+
+if ($vote_existe == 0)
+{
+	
+
 
 	$vote_post=$bdd->prepare('INSERT INTO vote(id_user, id_acteur, vote) VALUES (:id_user, :id_acteur, :vote)');
 	$vote_post->execute(array('id_user'=>$id_user,'id_acteur'=>$id_acteur, 'vote'=>$vote));
-
-	//if isset($vote)
-
-
+}
 
 
 header('Location:acteurs.php?acteur=' . $id_acteur);
