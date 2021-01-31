@@ -4,18 +4,6 @@
  ?>
 
 
-<?php
-
-try
-{
-	$bdd = new PDO('mysql:host=localhost;dbname=gbaf;charset=utf8', 'root', '');
-}
-catch(Exception $e)
-{
-        die('Erreur : '.$e->getMessage());
-}
-?>
-
 <form action="motdepasseoublie_post.php" method="post">
 
 		<p>
@@ -24,7 +12,7 @@ catch(Exception $e)
 			<input type="submit" value="Envoyer" />
 		</p>
 
-	</form>
+</form>
 
 
 

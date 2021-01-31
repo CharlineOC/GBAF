@@ -27,6 +27,7 @@ nav
 
 footer 
 {
+	margin: auto;
 	min-height: 40px;
 	border-top: 3px red solid;
 }
@@ -34,7 +35,7 @@ footer
 .footer
 {
 	text-align: center;
-	margin: auto;
+	margin-top: 10px;
 	display: flex;
 	justify-content: center;	
 }
@@ -115,7 +116,12 @@ a
 	border-radius: 10px;
 }
 
-
+.logo_acteur
+{
+	margin: auto;
+	display: flex;
+	justify-content: center;
+}
 
 
 

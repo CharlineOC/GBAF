@@ -1,6 +1,6 @@
 <!-- session start ? + include header ici -->
 <?php 
-	include "header.php";
+	session_start();
  ?>
 
 
@@ -13,15 +13,3 @@ session_destroy();
 
 header('Location: index.php')
 ?>
-
-
-
-
-
-
- <!-- include footer ici -->
-<?php
-	include "footer.php";
-  ?>
-
-<!--session end-->

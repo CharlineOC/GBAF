@@ -22,7 +22,7 @@ $id_user=$_SESSION['id_user'];
 	$vote_post=$bdd->prepare('INSERT INTO vote(id_user, id_acteur, vote) VALUES (:id_user, :id_acteur, :vote)');
 	$vote_post->execute(array('id_user'=>$id_user,'id_acteur'=>$id_acteur, 'vote'=>$vote));
 
-	if isset($vote)
+	//if isset($vote)
 
 
 
