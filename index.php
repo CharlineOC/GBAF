@@ -12,8 +12,8 @@
 	<form action="connexion_post.php" method="post">
 
 		<p>
-			<label for="pseudo">Pseudonyme</label> :<br/> <input type="text" name="pseudo" id="pseudo"/><br/>
-			<label for="motdepasse">Mot de passe</label> :<br/> <input type="password" name="motdepasse" id="motdepasse"/><br/>
+			<label for="pseudo">Pseudonyme</label> :<br/> <input class="champsconnexion" type="text" name="pseudo" id="pseudo"/><br/>
+			<label for="motdepasse">Mot de passe</label> :<br/> <input class="champsconnexion" type="password" name="motdepasse" id="motdepasse"/><br/>
 			<input type="submit" value="Envoyer" />
 		</p>
 

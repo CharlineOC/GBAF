@@ -1,3 +1,7 @@
+	<?php 
+		session_start();
+	?>
+
 <!DOCTYPE html>
 <html>
 	<head>
@@ -12,27 +16,29 @@
 
 	<header>
 		
-		<p> <a href="accueil.php"><img class="logo" src="images/logo_gbaf.png" alt="Logo GBAF" /></a> </p>
-
-
-		<!--afficher seulement si session existe : -->
-
-
-	<?php 
-		session_start();
-	?>
-
-	<nav>
 		<?php    
 			if (isset($_SESSION['id_user']) AND isset($_SESSION['nom']) AND isset($_SESSION['prenom']))       
-			{     
-				echo 'Bonjour ' . $_SESSION['nom'] . ' ' . $_SESSION['prenom'];    
-			}   
-		?>
-			<!-- ???   <?php echo $_POST['nom'], $_POST['prenom']; ?>  ??? -->
-			<p><a href="profil.php">Paramètres</a> / <a href="deconnexion.php">Déconnexion</a></p>
+			{   
+		?>  
+		<nav>
+			<p> <a href="accueil.php"><img class="logo" src="images/logo_gbaf.png" alt="Logo GBAF" /></a> </p>
 
-	</nav>
+		<?php
+				echo '<p class="bonjour">Bonjour ' . $_SESSION['nom'] . ' ' . $_SESSION['prenom'] . '<br/>';    
+		?>
+			<a href="profil.php">Paramètres</a> / <a href="deconnexion.php">Déconnexion</a></p>
+		</nav>
+		<?php
+			}  
+			else
+			{
+		?>
+			<p> <a href="index.php"><img class="logo" src="images/logo_gbaf.png" alt="Logo GBAF" /></a> </p>
+		<?php
+			}
+		?>
+			
+
 
 
 	</header>

@@ -62,8 +62,10 @@ include "header.php";
 	<div class="acteur">
 
 			<img class="logo_acteur_mini" src="<?php echo $donnees['logo']; ?>">
-			<h3> <?php echo  $donnees['acteur']; ?> </h3>
-			<p class="description"> <?php echo $donnees['description']; ?> </p>
+			<div class="description">
+				<h3> <?php echo  $donnees['acteur']; ?> </h3>
+				<p class="descriptiontrunc"> <?php echo $donnees['description']; ?> </p>
+			</div>
 			<a class="boutonsuite" href="acteurs.php?acteur=<?php echo $donnees['id_acteur']; ?>">Lire la suite</a>
 
 	</div>
