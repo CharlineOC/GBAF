@@ -5,15 +5,16 @@ include "header.php";
  ?>
 
 
-<section class="sectionprésentation">
+<section class="sectionpresentation">
 
 	<h1>GBAF: Le Groupement Banque-Assurance Français</h1>
 
-	<div class="présentation">
+	<div class="presentation">
 
 	<p>
-		Le Groupement Banque Assurance Français (GBAF) est une fédération représentant les 6 grands groupes français : <br/>
-
+		Le Groupement Banque Assurance Français (GBAF) est une fédération représentant les 6 grands groupes français : 
+	</p>
+	<p>
 		<ul>
        		<li>BNP Paribas</li>
         	<li>BPCE</li>
@@ -22,7 +23,6 @@ include "header.php";
         	<li>Société Générale</li>
         	<li>La Banque Postale</li>
     	</ul>
-
 	</p>
 
 	<p>
@@ -34,6 +34,7 @@ include "header.php";
 
 	</div>
 
+	<img class="img_banque" src="images/banque_de_france.jpg">
 
 </section>
 
@@ -66,8 +67,9 @@ include "header.php";
 				<h3> <?php echo  $donnees['acteur']; ?> </h3>
 				<p class="descriptiontrunc"> <?php echo $donnees['description']; ?> </p>
 			</div>
-			<a class="boutonsuite" href="acteurs.php?acteur=<?php echo $donnees['id_acteur']; ?>">Lire la suite</a>
-
+			<div class="boutonsuite">
+				<a class="liensuite" href="acteurs.php?acteur=<?php echo $donnees['id_acteur']; ?>">Lire la suite</a>
+			</div>
 	</div>
 
 		<?php

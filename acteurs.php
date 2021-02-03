@@ -15,7 +15,7 @@ include "header.php";
 			}
 ?>
 
-<section class="sectionprésentation">
+<section class="sectionpresentation">
 
 	<div>
 		<?php
@@ -32,7 +32,7 @@ include "header.php";
 
 		<img class="logo_acteur" src="<?php echo $donnees['logo']; ?>"/>
 		<h2><?php echo $donnees['acteur']; ?></h2>
-		<p><?php echo nl2br($donnees['description']); ?></p>
+		<p class="description_acteur"><?php echo nl2br($donnees['description']); ?></p>
 
 	</div>
 	
@@ -46,23 +46,24 @@ include "header.php";
 
 <section class="sectioncommentaires">
 
-	<div>
+	<div class="nb_commentaires_likes">
 		
 		<!-- afficher le nb de commentaires dans ma bdd
 			afficher bouton pour commenter
 			afficher bouton pour liker
 
 			afficher les derniers commentaires -> afficher pour chaque commentaire le prenom , la date , et le commentaire -->
-
+			<div class="nb_commentaires">
 				<?php
 
 					$nb_comm = $bdd->prepare('SELECT COUNT(*) AS nb_comm FROM commentaires WHERE id_acteur = :id_acteur');
 					$nb_comm->execute(array('id_acteur'=>$id_acteur));
 					$nb_commentaire = $nb_comm->fetch();
 
-					echo '<p>' . $nb_commentaire['nb_comm'] .  ' commentaires</p>'
+					echo '<p>' . $nb_commentaire['nb_comm'] .  ' commentaires sur ce partenaire</p>'
 
 				?>
+			</div>
 
 				<?php
 
@@ -81,13 +82,19 @@ include "header.php";
             
                 ?>
 
+			<div class="nb_likes">
 
-				<a href="vote.php?acteur=<?php echo $id_acteur; ?>&amp;vote=1"><?php echo $nb_likes['nb_likes']; ?> Like</a>
-                <a href="vote.php?acteur=<?php echo $id_acteur; ?>&amp;vote=0"><?php echo $nb_dislikes['nb_dislikes']; ?> Dislike</a>
+				<a class="likes" href="vote.php?acteur=<?php echo $id_acteur; ?>&amp;vote=1"><?php echo $nb_likes['nb_likes']; ?> Like</a>
+                <a class="dislikes" href="vote.php?acteur=<?php echo $id_acteur; ?>&amp;vote=0"><?php echo $nb_dislikes['nb_dislikes']; ?> Dislike</a>
 
+            </div>
+    </div>
 
-                <p> les 5 derniers commentaires : </p>
+    <div class="commentaires">
 
+                <p class="derniers_comm"> Les 5 derniers commentaires : </p>
+
+               
                 <?php
                 
                     $getCommentaire= $bdd->prepare('SELECT * FROM commentaires WHERE id_acteur = :id_acteur ORDER BY id_post DESC LIMIT 0, 5');
@@ -101,24 +108,25 @@ include "header.php";
                        		$donnees = $auteur->fetch();
                                
                    
-                        	echo '<p>' . $donnees['prenom'] . '</p>'; 
-                        	echo '<p>' . $commentaire['date_add'] . '</p>';
-                        	echo '<p>' . nl2br($commentaire['commentaire']) . '</p>';
+                        	echo '<div class="commentaire"><div class="infos_comm"><p class="prenom_comm">Posté par : ' . $donnees['prenom'] . '</p>'; 
+                        	echo '<p class="date_comm">Le , ' . $commentaire['date_add'] . '</p></div>';
+                        	echo '<p class="comm">' . nl2br($commentaire['commentaire']) . '</p></div>';
         				
         				}
 
 				?>
-
+			
+			<div class="nouveau_comm">
 				<p>Laisser un commentaire : <br/>
 
 		            <form action="commentaire_post.php" method="POST">
 		                <input type="hidden" name="id_acteur" value="<?php echo $id_acteur; ?>" />
-		                <textarea rows="5" name="commentaire"></textarea>
+		                <textarea rows="8" name="commentaire"></textarea>
 		                <input type="submit" value="Envoyer">
 		            </form>
 
 	            </p>
-
+	        </div>
 		
 	</div>
 	

@@ -3,8 +3,8 @@
 	include "header.php";
  ?>
 
-<div class="pageinscription">
-	<p> 
+<div class="pagecentree">
+	<p class="pseudo_titre"> 
 		Bienvenue ! <br/>
 		Veuillez remplir ce formulaire pour vous inscrire : 
 	</p>

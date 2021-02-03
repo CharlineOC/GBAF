@@ -3,8 +3,8 @@
 	include "header.php";
  ?>
 
-<div class="pageindex">
-	<p> 
+<div class="pagecentree">
+	<p class="pseudo_titre"> 
 		Bienvenue ! <br/>
 		Veuillez vous connecter pour accéder au contenu du site : 
 	</p>

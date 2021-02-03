@@ -19,7 +19,8 @@ $retourquestion = $verif_question->fetch();
 
 ?>
 
-<p>Renseignez la réponse à votre question secrète :</p>
+<div class="pagecentree">
+<p class="pseudo_titre">Avant de pouvoir changer de mot de passe, renseignez la réponse à votre question secrète :</p>
 
 <p><?php echo $retourquestion['questionsecrete']; ?></p>
 
@@ -27,8 +28,9 @@ $retourquestion = $verif_question->fetch();
 
 		<p>
 			<input type="hidden" name="id_user" value="<?php echo $retourquestion['id_user']; ?>"/>
-			<label for="reponsesecrete">Réponse à la question secrète</label> : <input type="text" name="reponsesecrete" id="reponsesecrete"/><br/>
+			<label for="reponsesecrete">Réponse à la question secrète</label> : <input type="text" class="champsconnexion" name="reponsesecrete" id="reponsesecrete"/><br/>
 			<input type="submit" value="Envoyer" />
 		</p>
 
 </form>
+</div>
