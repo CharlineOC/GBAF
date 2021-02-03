@@ -67,8 +67,10 @@ include "header.php";
 				<h3> <?php echo  $donnees['acteur']; ?> </h3>
 				<p class="descriptiontrunc"> <?php echo $donnees['description']; ?> </p>
 			</div>
+			<div class="bouton">
 			<div class="boutonsuite">
 				<a class="liensuite" href="acteurs.php?acteur=<?php echo $donnees['id_acteur']; ?>">Lire la suite</a>
+			</div>
 			</div>
 	</div>
 
