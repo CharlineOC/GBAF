@@ -150,14 +150,12 @@ form
 .description
 {
 	padding: 1%;
-	margin: auto;
-	max-width: 70%;
+	max-width: calc(100% - 20% - 105px);
 }
 	@media screen and (max-width: 480px)
 	{
 		.description
 		{
-			margin: auto;
 			margin-left: 1%;
 			padding: 2%;
 			max-width: 100%;
@@ -175,37 +173,15 @@ form
   	text-overflow: ellipsis;
 }
 
-.bouton
-{
-	height: 1.8rem;
-	width: 10%;
-	display: flex;
-	justify-content: flex-end;
-	align-self: flex-end;
-}
-	@media screen and (max-width: 800px)
-	{
-		.bouton
-		{
-			width: 20%;
-		}
-	}
-	@media screen and (max-width: 480px)
-	{
-		.bouton
-		{
-			width: 50%;
-		}
-	}
-
 .boutonsuite
 {
-	margin: auto;
-	padding: 1%;
+	padding: 5px;
 	text-align: center;
-	width: 100%;
+	min-width: 105px;
+	width: 105px;
 	border: 2px black solid;
 	border-radius: 10px;
+	align-self: flex-end;
 }
 
 .liensuite
@@ -213,7 +189,6 @@ form
 	margin: auto;
 	padding: 1%;
 	text-decoration: none;
-
 }
 
 .logo_acteur
